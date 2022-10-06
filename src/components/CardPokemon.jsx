@@ -1,6 +1,5 @@
 function CardPokemon({ imagenes, nombrePokemon, stats, tipos }) {
-  console.log("tipos desde card", tipos);
-  //   console.log("desde card", imagenes);
+
 
   return (
     <div className="poke-seleccionado mt-5">
