@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+.div_contenedor {
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(91, 91, 91);
+  padding: 1rem;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.imagen-nav {
+  width: 3rem;
+  height: 3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.select {
+  width: 20%;
+ 
+}
+
+.navbar {
+  gap: 1rem;
+}
+
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+.home {
+  width: 100vw;
+  gap: 1rem;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.navbar NavLink{
+  font-size: 20rem;
+}
+
+.contenedor {
+  height: 90vh;
+  place-items: center;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.titulo{
+margin: 0;
+font-size: 3rem;
+font-weight: 200;
+}
+
+.active{
+  color: rgb(185, 95, 95);
+}
+
+.pokebola {
+  width: 8rem;
+  height: 8rem;
+}
+
+#contenedor-pokebola{
+  background-image: url('../src/assets/pokeimagen.jpeg');
+  background-position:center;
+  
+  background-size: cover;
+
+}
+
+.poke-seleccionado {
+
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 1rem;
+ padding: 2rem;
+width: 50rem;
+height: auto;
+margin: auto;
+}
+
+#contenedor-pokebola h5{
   color: white;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 10px black;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img-seleccionado{
+  width: 30rem;
+  height: 30rem;
 }
