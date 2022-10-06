@@ -1,7 +1,9 @@
+
+
 function CardPokemon({ imagenes, nombrePokemon, stats, tipos }) {
-
-
   return (
+
+    <>
     <div className="poke-seleccionado mt-5">
       <div>
         <div className="row">
@@ -40,6 +42,8 @@ function CardPokemon({ imagenes, nombrePokemon, stats, tipos }) {
         </div>
       </div>
     </div>
+    
+    </>
   );
 }
 
