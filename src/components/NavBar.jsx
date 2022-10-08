@@ -14,7 +14,7 @@ function NavBar() {
           <h5>Home </h5>
         </NavLink>
 
-        <NavLink to="/pokemon/" className={setActiveClass}>
+        <NavLink to="/pokemones/" className={setActiveClass}>
           <h5>Pokemones </h5>
         </NavLink>
       </div>

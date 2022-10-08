@@ -23,7 +23,7 @@ function Home() {
   }, []);
 
   const irApokemon = () => {
-    navigate(`/pokemon/${nombre}`);
+    navigate(`/pokemones/${nombre}`);
   };
 
   return (
@@ -43,7 +43,6 @@ function Home() {
               }}
             >
               <option className="text-center" value="">
-                {" "}
                 --Pokemones--
               </option>
 

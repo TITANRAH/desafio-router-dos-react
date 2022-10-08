@@ -1,3 +1,7 @@
+body{
+  background-color: black;
+}
+
 .div_contenedor {
   height: 100vh;
 }
@@ -56,6 +60,7 @@
 margin: 0;
 font-size: 3rem;
 font-weight: 200;
+color: rgb(229, 229, 229);
 }
 
 .active{
@@ -67,8 +72,13 @@ font-weight: 200;
   height: 8rem;
 }
 
+.pokebola:hover{
+  width: 9rem;
+  height: 9rem;
+}
+
 #contenedor-pokebola{
-  background-image: url('../src/assets/pokeimagen.jpeg');
+  background-image: url('../src/assets/pokeimagen3.png');
   background-position:center;
   
   background-size: cover;
@@ -93,8 +103,8 @@ margin: auto;
 }
 
 .img-seleccionado{
-  width: 30rem;
-  height: 30rem;
+  width: 20rem;
+  height: 20rem;
 }
 
 
@@ -160,4 +170,39 @@ margin: auto;
   background-position:left;
   
   background-size:auto;
+}
+
+.pokemones{
+  justify-content: center;
+ 
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contenedor-pokemones{
+  width: 50%;
+  flex-wrap: wrap
+}
+
+.fotoPokemon{
+  width: 15rem;
+  height: 15rem;
+}
+
+.pokemones h5{
+  font-weight: 500;
+  color: rgb(180, 180, 180);
+  cursor: pointer;
+}
+
+.pokemones h5:hover{
+  color: red;
+  font-weight: 800;
+}
+
+.poke-seleccionado h1, h3, h4{
+  color: rgb(180, 180, 180);
 }

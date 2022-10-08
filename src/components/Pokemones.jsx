@@ -14,6 +14,22 @@ function Pokemones() {
   const [tipos, setTipos] = useState([]);
   const [error, setError] = useState();
   const [verdadero, setVerdadero] = useState(true);
+  const [pokemon, setPokemon] = useState([]);
+  const [urlPokemon, setUrlPokemon] = useState("");
+  const [fotoPokemon, setFotoPokemon] = useState(
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/3.svg"
+  );
+
+  useEffect(() => {
+    async function getPokemones() {
+      const pokemonesResult = await axios("https://pokeapi.co/api/v2/pokemon");
+
+      console.log("pokemonesResult", pokemonesResult.data.results);
+      setPokemon(pokemonesResult.data.results);
+    }
+
+    getPokemones();
+  }, []);
 
   useEffect(() => {
     if (nombre !== undefined && nombre && nombre !== "") {
@@ -25,7 +41,7 @@ function Pokemones() {
 
           setVerdadero(false);
           setNombrePokemon(resultado.data.name);
-          setImagenes(resultado.data.sprites);
+          setImagenes(resultado.data.sprites.other.home);
           setStats(resultado.data.stats);
           setTipos(resultado.data.types);
         } catch (error) {
@@ -36,14 +52,39 @@ function Pokemones() {
     }
   }, [nombre]);
 
+  useEffect(() => {
+    if (urlPokemon !== "") {
+      async function getFotoPokemon() {
+        const resultado = await axios(urlPokemon);
+
+        setFotoPokemon(resultado.data.sprites.other.home.front_default);
+      }
+
+      getFotoPokemon();
+    }
+  }, [urlPokemon]);
+
   return (
     <>
       {!nombre || nombre === "" || error === 404 ? (
         <div className="contenedor" id="contenedor-pokebola">
-          <h6>
-            No encontramos ningun Pokemón, pulsa la pokebola para volver a
-            buscar
-          </h6>
+          <>
+            <img className="fotoPokemon" src={fotoPokemon} alt="Pokemon !" />
+            <div className="contenedor-pokemones">
+              <div className="pokemones">
+                {pokemon.map((pokemon) => (
+                  <h5
+                    key={pokemon.name}
+                    onClick={() => setUrlPokemon(pokemon.url)}
+                  >
+                    {pokemon.name.toUpperCase()}
+                  </h5>
+                ))}
+              </div>
+            </div>
+          </>
+
+          <h6>ATRAPALO YA ! AQUÍ EN LA POKEBOLA</h6>
           <NavLink end to="/">
             <img className="pokebola" src={pokebola} alt="" />
           </NavLink>

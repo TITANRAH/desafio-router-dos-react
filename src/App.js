@@ -13,8 +13,8 @@ function App() {
       <NavBar/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pokemon" element={<Pokemones />} />
-          <Route path="/pokemon/:nombre" element={<Pokemones />} />
+          <Route path="/pokemones" element={<Pokemones />} />
+          <Route path="/pokemones/:nombre" element={<Pokemones />} />
           <Route path="*" element={<NotFound />} />
          
         </Routes>
